@@ -269,13 +269,33 @@ nav.topnav {
   font-family: var(--system);
 }
 a.logo {
+  display: flex;
+  padding-top: 8px;
+  margin-top: auto;
   margin-right: auto;
+  margin-bottom: auto;
+  border-bottom: none;
 }
 a.logo:hover {
 }
-a.logo > img {
-  width: 122px;
-  height: 46px;
+a.logo > svg {
+  height: 28px;
+}
+a.logo svg > g > g {
+  fill: var(--mid);
+  transition: var(--std);
+}
+a.logo:hover svg > g > g {
+  fill: var(--light);
+}
+a.logo > span {
+  padding-top: 4px;
+  transform: translateX(-4px);
+  font-family: Spectral, serif;
+  font-size: 1.35em;
+  font-weight: 700;
+  text-transform: none;
+  min-width: fit-content;
 }
 .topnav a {
   text-decoration: none; 
@@ -290,6 +310,7 @@ a.logo > img {
 /*-- hides trigram (hamburger menu button) by default --*/
 .nav-item.trigram {
   display: none; 
+  border-bottom: none;
 }
 /*-------------------
 --- Footer Styles ---
