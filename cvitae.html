@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric J. York</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..300" rel="stylesheet" />
+  <link rel="stylesheet" href="css/modnorm.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav id="main-nav" class="topnav">
+    <a class="logo" href="index.html">
+      <svg width="144px" height="96px" viewBox="0 0 144 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="e-logo" transform="translate(0, 0.2812)" fill-rule="nonzero">
+                  <path d="M61.6,0.91875 C65,0.21875 68.4,-0.08125 71.9,0.01875 C78.8,0.21875 85.6,1.91875 91.7,5.11875 C97.7,8.21875 103,12.61875 107.1,17.91875 C109.315603,20.7146295 111.225095,23.788791 112.755077,27.0384741 L114.315625,26.59375 L114.315625,26.59375 L116.7,25.91875 C121,24.71875 125.2,23.61875 129.5,22.51875 C131.5,22.01875 133.4,21.61875 135.4,21.11875 C137.7,20.51875 140,19.91875 142.4,19.41875 C142.8,19.31875 143.1,19.91875 143.2,20.21875 C143.3,20.61875 143.4,21.01875 143.4,21.41875 C143.4,22.01875 143.3,22.61875 143,23.11875 C142.9,23.31875 142.7,23.51875 142.4,23.51875 C141.1,23.91875 139.8,24.21875 138.5,24.51875 C133.9,25.61875 129.2,26.81875 124.6,28.01875 C122.8,28.51875 121,28.91875 119.3,29.41875 C116.5,30.21875 113.7,31.01875 110.9,31.81875 L114.339008,30.8359215 C114.970088,32.5655849 115.49373,34.3311638 115.9,36.11875 C116.8,39.71875 117.3,43.31875 117.3,46.91875 C117.3,50.51875 117,54.11875 116.3,57.61875 C115.6,61.11875 114.5,64.41875 113,67.71875 C111.6,70.81875 109.9,73.71875 107.8,76.41875 C103.6,81.81875 98.4,86.31875 92.4,89.51875 C86.4,92.71875 79.6,94.51875 72.8,94.81875 C72.2,94.81875 71.6,94.81875 71.1,94.91875 C64.8,94.91875 58.4,93.61875 52.6,91.11875 C46.3,88.31875 40.6,84.21875 36.1,79.01875 C33.9,76.41875 31.8,73.71875 30.2,70.71875 C28.5,67.61875 27.2,64.41875 26.2,61.11875 L26.329,61.535 L25.7,61.81875 C23.975,62.64375 22.19375,63.46875 20.440625,64.29375 L18.7,65.11875 C18.1,65.41875 17.4,65.81875 16.8,66.11875 C15.4,66.91875 13.9,67.61875 12.4,68.41875 C11.6,68.81875 10.7,69.21875 9.9,69.71875 C8.4,70.51875 7,71.31875 5.6,72.21875 C4.5,73.01875 3.4,73.71875 2.4,74.61875 C2.2,74.71875 2.1,74.91875 2,75.11875 C1.8,75.41875 1.6,75.91875 1,75.71875 C0.8,75.71875 0.5,75.51875 0.4,75.31875 C0.1,74.81875 0,74.21875 0,73.61875 C0,73.21875 0.1,72.81875 0.2,72.41875 C0.4,72.11875 0.5,71.81875 0.7,71.51875 C0.9,71.21875 1.1,71.01875 1.4,70.71875 C1.8,70.31875 2.2,69.91875 2.7,69.61875 C3.7,68.81875 4.7,68.11875 5.8,67.51875 C7.1,66.71875 8.4,66.01875 9.7,65.31875 C12.3,64.01875 14.9,62.61875 17.5,61.31875 C19.1,60.51875 20.8,59.81875 22.4,59.01875 C23.3743333,58.5315833 24.3486667,58.0584599 25.323,57.5941172 C22.9426485,46.1698257 24.8007196,33.976877 30.6,23.91875 C30.6,23.71875 30.7,23.51875 30.8,23.31875 C32.4,20.61875 34.3,18.01875 36.4,15.61875 C40.7,10.71875 46.1,6.71875 52.1,4.01875 C55.1,2.61875 58.3,1.61875 61.6,0.91875 Z M112.882472,31.252162 L110.9,31.81875 C107,32.81875 103.2,33.91875 99.4,35.11875 C94.4,36.61875 89.5,38.11875 84.5,39.61875 C79.4,41.31875 74.2,43.01875 69.1,44.71875 C67.8,45.11875 66.5,45.51875 65.2,46.01875 C62.9,46.81875 60.7,47.71875 58.4,48.51875 L58.4,48.51875 L53.47,50.3273935 C54.0133333,53.7932829 54.5566667,57.2258929 55.1,60.71875 C55.6,64.11875 56,67.51875 56.4,70.91875 C56.9,74.81875 57.3,78.61875 57.9,82.41875 L57.8418504,82.0376832 C58.6084033,81.2724392 59.4277865,80.5455946 60.3,79.81875 C62.5,77.91875 64.9,76.31875 67.4,74.71875 C72.5,71.51875 77.8,68.61875 83.3,66.41875 C88.2,64.51875 93.4,63.01875 98.6,62.11875 C100.8,61.81875 102.9,61.41875 105,61.11875 C105.8,60.91875 106.5,62.21875 106.7,62.81875 C107,63.61875 107.1,64.41875 107.1,65.31875 C107.1,66.71875 106.7,69.31875 104.9,69.51875 C103.1,69.71875 101.4,70.01875 99.6,70.31875 C95.9,70.91875 92.3,71.71875 88.8,72.81875 C83.2,74.71875 77.9,77.21875 72.8,80.11875 C68.1,82.81875 63.4,85.71875 59.5,89.41875 C59.1405724,89.7781776 58.8328201,90.1892805 58.539596,90.6149116 C59.9311155,91.00308 61.3511604,91.3041071 62.8,91.51875 C65.5,91.91875 68.2,92.11875 70.9,92.11875 C76.1,92.01875 81.4,91.01875 86.3,88.91875 L86.3,88.91875 L86.261,88.956 L86.8373037,88.7334167 C90.0204741,87.4738611 93.0484148,85.9138611 95.8560296,84.0534167 L96.5,83.61875 C99.7,81.41875 102.7,78.81875 105.2,75.81875 C108.1,72.41875 110.5,68.71875 112.3,64.61875 L112.26,64.706 L112.284375,64.678125 L112.284375,64.678125 L112.3,64.61875 C112.4,64.61875 112.4,64.51875 112.4,64.51875 C112.38,64.51875 112.364,64.52275 112.3512,64.52915 L112.33,64.546 L112.6239,63.86575 C113.4711,61.84975 114.1839,59.76975 114.7111,57.62575 L114.9,56.81875 C115.4,54.71875 115.7,52.51875 115.9,50.31875 C116,48.31875 116,46.21875 115.9,44.21875 C115.8,42.01875 115.5,39.91875 115,37.81875 C114.427797,35.6116804 113.721954,33.4046109 112.882472,31.252162 Z M49.98,51.605 L49.4,51.81875 C48.3,52.21875 47.2,52.61875 46.1,53.11875 C41.2,55.21875 36.2,57.21875 31.3,59.21875 C30.8,59.41875 30.3,59.71875 29.8,59.91875 C28.9658621,60.2762377 28.1672234,60.6692247 27.3617822,61.0554091 C27.8234082,62.4856165 28.3704148,63.9021833 29,65.31875 C30.8,69.31875 33.1,73.01875 35.9,76.31875 C41,82.21875 47.7,86.71875 55,89.41875 L54.7456815,89.3225169 C54.7139934,89.0146707 54.7,88.7097137 54.7,88.41875 C54.7,87.8514167 54.7502917,87.2840833 54.8865404,86.71675 C54.487633,86.1438584 54.2584389,85.3447 54.2,84.81875 C53.5,79.61875 53,74.31875 52.4,69.11875 C52,65.51875 51.5,61.91875 51,58.31875 C50.6,55.71875 50.2,53.01875 49.8,50.41875 L49.98,51.605 Z M70.2,3.01875 C67.5,3.01875 64.7,3.31875 62,3.81875 C59.5,4.31875 57,5.01875 54.5,5.91875 L54.5,5.91875 L54.536,5.882 L54.0757784,6.06314883 C47.2260175,8.7998206 40.9350437,13.1264958 36.0410379,18.7079022 L35.6,19.21875 L35.6,19.21875 L35.1004115,19.8523577 C33.7703704,21.5434414 32.4666667,23.2520833 31.4,25.11875 C31.3,25.21875 31.2,25.31875 31.1,25.31875 C30.3,26.81875 29.6,28.21875 28.9,29.71875 C27.8,32.31875 26.9,35.01875 26.3,37.71875 C25.8,39.91875 25.5,42.21875 25.3,44.51875 L25.3,44.51875 L25.3,44.21875 C25.2,46.31875 25.2,48.41875 25.3,50.41875 L25.3,50.41875 L25.3,50.11875 C25.4,52.51875 25.8,54.81875 26.3,57.11875 C26.3010035,57.1234328 26.3020078,57.1281154 26.3030129,57.1327977 C27.6013333,56.5181346 28.9006667,55.9184423 30.2,55.31875 C31.6,54.61875 33.1,54.11875 34.5,53.51875 C37.5,52.31875 40.6,51.01875 43.6,49.81875 C44.8,49.31875 46,48.81875 47.2,48.41875 C47.9158387,48.1536246 48.6334346,47.8884991 49.3523219,47.6233737 L49.3,47.31875 C48.5,43.01875 47.7,38.61875 46.9,34.31875 C46.6,32.51875 46.2,30.81875 45.9,29.01875 L45.9,29.01875 L45.3,25.71875 L45.3,25.71875 L45,24.21875 C44.7,23.11875 44.4,21.81875 44.5,20.61875 C44.6,19.71875 44.7,18.71875 45.2,18.01875 C45.5,17.61875 45.8,17.41875 46.2,17.41875 C46.4253086,17.41875 46.6201589,17.494896 46.787982,17.6208815 C47.1949754,17.196492 47.6147892,16.7422239 48.1,16.41875 C48.9,15.81875 49.7,15.41875 50.6,14.91875 C52.3,14.01875 54,13.21875 55.7,12.51875 C57,12.01875 58.2,11.51875 59.5,11.01875 C59.9333333,10.8520833 60.3666667,10.6826389 60.8,10.5118056 L63.4,9.48125 C64.7,8.96875 66,8.46875 67.3,8.01875 C71.3637579,6.58890927 75.4275157,5.21570136 79.5338925,3.89912625 C79.2242757,3.83728967 78.912809,3.77667759 78.6,3.71875 C75.8,3.21875 73,3.01875 70.2,3.01875 Z M85.7159174,5.55406931 C85.775913,5.95942356 85.8,6.37704327 85.8,6.81875 C85.8,7.71875 85.7,8.51875 85.4,9.31875 C85.2,9.91875 84.8,10.41875 84.3,10.81875 C79.1,12.51875 73.9,14.21875 68.7,16.01875 C66.2,16.91875 63.8,17.81875 61.3,18.81875 C60.2,19.21875 59,19.61875 57.9,20.11875 C56.2,20.81875 54.5,21.61875 52.8,22.41875 C51.5,23.11875 50.2,23.71875 49.1,24.71875 C48.9733766,24.8453734 48.8467532,24.9619758 48.7169577,25.0653851 C48.7366698,25.1820833 48.7605556,25.3004167 48.8,25.41875 C49.2,27.21875 49.5,28.91875 49.9,30.71875 C50.3,32.71875 50.7,34.81875 51.1,36.81875 C51.7,40.31875 52.5,43.81875 53,47.31875 L52.8475743,46.3373347 C56.4038939,45.0311398 59.9732738,43.7249449 63.5,42.41875 C64.6,42.01875 65.6,41.61875 66.6,41.31875 C69.5,40.31875 72.4,39.41875 75.3,38.41875 C79.1,37.21875 82.9,35.91875 86.7,34.71875 C92.2,33.01875 97.7,31.41875 103.2,29.71875 C104.5,29.31875 105.9,29.01875 107.2,28.61875 C108.523636,28.2464773 109.830163,27.8742045 111.133735,27.5019318 C109.555164,24.4603171 107.659737,21.5680969 105.4,18.91875 L105.4,18.91875 L105.6,19.11875 C103,16.11875 100.1,13.41875 96.9,11.21875 C93.6,8.91875 90,7.11875 86.3,5.71875 L86.375,5.747 L86.4,5.76875 L86.4,5.76875 L86.431,5.795 L85.7159174,5.55406931 Z" id="Logo"></path>
+              </g>
+          </g>
+      </svg>
+      <span>ric J. York</span>
+    </a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#design">Design</a>
+    <a href="index.html#teaching">Teaching</a>
+    <a href="cvitae.html">C.V.</a>
+    </a>
+    <a href="javascript:void(0);" class="nav-item trigram">&#9776;</a>
+  </nav>
+  <main class="site-main">
+    <header>
+      <div class="info">
+        <h1>Eric J. York</h1>
+        <h2>Assistant Professor</h2>
+        <p>Communication, Media & Design</p>
+        <p>Clarkson University</p>
+      </div>
+      <div class="contact">
+        <p>
+          <span class="material-symbols-outlined">mail</span>
+          <a href="mailto:eyork@clarkson.edu">eyork@clarkson.edu</a>
+        </p>
+        <p>
+          <span class="material-symbols-outlined">phone</span>
+          <a href="tel:+1.515.290.8879">+1.515.290.8879</a>
+        </p>
+        <p>
+          <span class="material-symbols-outlined">link</span>
+          <a href="https://ericjyork.com">ericjyork.com</a>
+        </p>
+      </div>
+    </header>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="listing">
+        <h3><strong><em>Ph.D.</em></strong></h3>
+        <div>
+          <h3><strong>Rhetoric and Professional Communication</strong></h3>
+          <p>Iowa State University of Science and Technology · 2015</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3><em>M.A.</em></h3>
+        <div>
+          <h3>English <em class="thin">· concentration in Creative Writing</em></h3>
+          <p>University of Maine · 2006</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3><em>B.A.</em></h3>
+        <div>
+          <h3>English <em class="thin">· minor in Secondary Education</em></h3>
+          <p>University of Maine · 2003</p>
+        </div>
+      </div>
+    </section>
+    <section id="appointments">
+      <h2>Appointments</h2>
+      <div class="listing">
+        <h3>2016&ndash;</h3>
+        <div>
+          <h3><strong>Assistant Professor of Communication, Media & Design</strong></h3>
+          <p>Clarkson University · Potsdam, NY</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3>2015&ndash;&rsquo;16</h3>
+        <div>
+          <h3>Assistant Director of ISUComm Foundation Courses and<br>
+          Lecturer of Rhetoric and Professional Communication</h3>
+          <p>Iowa State University of Science and Technology · Ames, IA</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3>2010&ndash;&rsquo;15</h3>
+        <div>
+          <h3>Graduate Teaching Assistant of Rhetoric and Professional Communication</h3>
+          <p>Iowa State University of Science and Technology · Ames, IA</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3>2006&ndash;&rsquo;10</h3>
+        <div>
+          <h3>Lecturer in English <em class="thin">· Full-time, Ranked</em></h3>
+            <p class="sm">Writing Program Administration 2007&ndash;&rsquo;09</p>
+            <p class="sm">Husson University · Bangor, ME</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3>2006&ndash;&rsquo;07</h3>
+        <div>
+          <h3>Adjunct Lecturer of English</h3>
+          <p>Kennebec Valley Community College · Waterville, ME</p>
+        </div>
+      </div>
+      <div class="listing">
+        <h3>2004&ndash;&rsquo;06</h3>
+        <div>
+          <h3>Graduate Teaching Assistant in English</h3>
+          <p>University of Maine · Orono, ME</p>
+        </div>
+      </div>
+    </section>
+    <section id="publications">
+      <h2>Peer-Reviewed Publications</h2>
+      <p class="pub">
+        York, E. J. (2023). Deceptive by Design: The Visual Rhetorical Mechanism of Dark Patterns. <em>Kairos: A Journal of Rhetoric, Technology, and Pedagogy,</em> 27(2). <a href="http://kairos.technorhetoric.net/27.2/topoi/york/index.html">http://kairos.technorhetoric.net/27.2/topoi/york/index.html</a>
+      </p>
+      <p class="pub">
+        York, E. J. (2023). Evaluating ChatGPT: Generative AI in UX Design and Web Development Pedagogy. <em>Proceedings of the 41<sup>st</sup> ACM International Conference on Design of Communication</em>, 143&ndash;148. <a href="https://10.1145/3615335.3623035">https://10.1145/3615335.3623035</a>
+      </p>
+      <p class="pub">
+        York, E. J. (2022). Alternate Histories and Conflicting Futures: Git Version Control as Software Development Infrastructure. <em>Communication Design Quarterly</em>, 10(2), 57&ndash;65. <a href="https://doi.org/10.1145/3507857.3507863">https://doi.org/10.1145/3507857.3507863</a>
+      </p>
+      <p class="pub">
+        York, E. J., Propst, L., Pelky, R., Ball, J. L., Lee, A. M., & White-Cree, P. (2022). Stories from the Circle: Extended Reality (XR), Posthumanism, and Decolonizing the Design of Communication. <em>Proceedings of the 40<sup>th</sup> ACM International Conference on Design of Communication</em>, 143&ndash;148. <a href="https://doi.org/10.1145/3513130.3558993">https://doi.org/10.1145/3513130.3558993</a>
+      </p>
+      <p class="pub">
+        York, E. J. (2021). Digital Surveillance in Online Writing Instruction: Panopticism and Simulation in Learning Management Systems. <em>Computers and Composition</em>, 62, 102680. <a href="https://doi.org/10.1016/j.compcom.2021.102680">https://doi.org/10.1016/j.compcom.2021.102680</a>
+      </p>
+      <p class="pub">
+        York, E. J. (2021). Building Community Coalitions for eCommerce: Client-based Learning and Web Development during a Pandemic Lockdown. <em>Proceedings of the 39<sup>th</sup> ACM International Conference on Design of Communication</em>, 263&ndash;268. <a href="https://doi.org/10.1145/3472714.3473651">https://doi.org/10.1145/3472714.3473651</a>
+      </p>
+      <p class="pub">
+        York, E. J., & Johnson-Eilola, J. (2020). Enduring Designs, Transient Designers: A Comparison of the Workspaces and Materials of Professionals and Novices. <em>Proceedings of the 38<sup>th</sup> ACM International Conference on Design of Communication</em>, 1&ndash;8. <a href="https://doi.org/10.1145/3380851.3416783">https://doi.org/10.1145/3380851.3416783</a>
+      </p>
+      <p class="pub">
+        Lutz, B., O&rsquo;Connell, R., & <strong>York, E.</strong> (2014). Brokering ISUComm Sites: Toward the Creation of a Large Scale ePortfolio Platform for Multimodal Composition. <em>Proceedings of the 32<sup>nd</sup> ACM International Conference on The Design of Communication</em> 1&ndash;6. <a href="https://doi.org/10.1145/2666216.2666227">https://doi.org/10.1145/2666216.2666227</a>
+      </p>
+      <p class="pub">
+        York, E. J. (2011). Culture Jams: Critical Media Literacy in The Digital/Multimodal Classroom. <em>Computers and Composition Online, Special Issue Ethics in a Digital Age</em> <a href="http://cconlinejournal.org/virtualc.htm">http://cconlinejournal.org/virtualc.htm</a>
+      </p>
+      <h2>Forthcoming</h2>
+      <p class="pub">
+        York, E. J. (2024). Collaborating on the Interface: Rhetorical and Hermeneutic Theory for User Experience Design. <em>Collaborations and Partnerships in User Experience Design.</em> (Eds. Ryan Webber and Joy Robinson). WAC Clearinghouse. (In press, expected early 2024).
+      </p>
+      <p class="pub">
+        York, E. J. (2024). Thinking Machines: Generative Rhetoric in the &lsquo;Turing Test&rsquo; for Artificial Intelligence. <em>Artificial Intelligence and the Humanities</em> (Ed. Sid Dobrin). Parlor Press. (In press, expected Spring, 2024).
+      </p>
+      <p class="pub">
+        Johnson-Eilola, J., Selber, S., <strong>York, E. J.</strong> (2024). Automation or Augmentation: Language Models as Educational Subject. <em>Artificial Intelligence and the Humanities</em> (Ed. Sid Dobrin). Parlor Press. (In press, expected Spring, 2024).
+      </p>
+      <p class="pub">
+        Johnson-Eilola, J., Selber, S., <strong>York, E. J.</strong> (n.d.). Can AI Robots Write Effective Instructions? <strong>Accepted (revise and resubmit)</strong> in <em>The Journal of Business and Technical Communication</em> Special Issue on the Effects of Artificial Intelligence Tools in Technical Communication Pedagogy, Practice, and Research. (Expected Spring, 2024).
+      </p>
+      <h2>In Progress</h2>
+      <p class="pub">
+        York, E. J. (n.d.). Failing Machines: Sustainability, Scalability, and Continuity in the Digital Humanities. <strong>Under review</strong> with <em>Computers and Composition</em>.
+      </p>
+      <p class="pub">
+        York, E. J. (n.d.). Machines of Loving Grace: Algorithmic Surveillance in the Age of Artificial Intelligence. <strong>Drafting phase.</strong>
+      </p>
+      <p class="pub">
+        Carlson, J., Johnson-Eilola, J., Wilkes, A., <strong>York, E. J.</strong> (n.d.). User experience methods in the study of online product marketing images. <strong>Data collection phase; funded and IRB approved.</strong>
+      </p>
+      <p class="pub">
+        Banavar, M., Cohen, A., DeWaters, J., Dub, W., Kocho-Williams, A., Manierre, M., Pelkey, R., Propst, L., Rogers, J., Sanja, C., <strong>York, E. J.</strong> (n.d.). Documenting Generative AI in Design and Development Pedagogy. <strong>Research design phase; funding awarded</strong>.
+      </p>
+    </section>
+    <section id="grants">
+      <h2>Funding Awards</h2>
+      <p class="pub">
+        <strong>$1,269,000.</strong> Senior Personnel, with Kavanaugh, K., Johns, L., Bowman, R. and Cabral, M. “Building Rural Aspirations in Neuroscience with Science, Technology, Engineering, and Mathematics (BRAIN-STEM)” National Institutes of Health (NIH), Science Education Partnerships Award (SEPA). 2023.
+      </p>
+      <p class="pub">
+        <strong>$20,000</strong> (plus 1 graduate student tuition waiver). Co-PI, with Banavar, M., Cohen, A., Manierre, M., DeWaters, J., Kocho-Williams, A., Propst, L., Pelky, R., Rogers, J., Dub, R. and Sajna, C. “Being Brave in a New World: Impacts of ChatGPT on the university.” Team Science Projects Planning Grant (TSPPG). 2023.
+      </p>
+      <p class="pub">
+        <strong>$1,800.</strong> Co-PI, with Carlson, J., Johnson-Eilola, J. and Wilke, A. “The Effects of Product Packaging in Online Shopping Environments”. Internally funded (Reh School). 2023.
+      </p>
+      <p class="pub">
+        <strong>$5,000.</strong> Co-PI, with Ball, J. L., Lee, A. M., Propst, L., Pelky, R., and White-Cree, P. “Stories from the Circle: A Public-facing Augmented Reality Application.” Undergraduate Faculty Research Award (UFRA) 2022.
+      </p>
+      <p class="pub">
+        <strong>$1,500.</strong> Co-PI, with Ball, J. L., Lee, A. M., Propst, L., Pelky, R., and White-Cree, P. “Stories from the Circle: Web VR and Website.” Humanities NY, Vison Grant. 2021.
+      </p>
+      <p class="pub">
+        <strong>$14,000.</strong> PI. “Developing eCommerce Websites for Local Businesses Closed by the Pandemic”. Shipley Center and Adirondack North Country Association (ANCA) Partnership.
+      </p>
+      <p class="pub">
+        <strong>$39,400.</strong> Co-author, “Making Computer Classrooms More Efficient.” Liberal Arts and Sciences Computer Advisory Committee (LASCAC). 2014
+      </p>
+      <p class="pub">
+        <strong>$630.</strong> Co-author, “Enabling Mobile Device Testing Across Platforms.” Liberal Arts and Sciences Computer Advisory Committee (LASCAC). 2014. 
+      </p>
+      <p class="pub">
+        <strong>$32,600.</strong> Co-author, “Putting the Silent-E Back in WOVE.” Liberal Arts and Sciences Computer Advisory Committee (LASCAC). 2013. 
+      </p>
+      <p class="pub">
+        <strong>$1,000.</strong> Co-author, “Piloting Virtual Peer Review in ISUComm.” ISUComm. 2012. 
+      </p>
+    </section>
+    <section id="conferences">
+      <h2>Conference Presentations</h2>
+      <p class="pub">
+        “Evaluating ChatGPT: Generative AI in UX Design and Web development Pedagogy.” <em>Association for Computing Machinery Special Interest Group for the Design of Communication (ACM SIGDOC);</em> 2023.
+      </p>
+      <p class="pub">
+        “Deregulating and Domesticating ChatGPT in Technical Communication Pedagogy and Practice.” <em>Association for Teachers of Technical Writing (ATTW)</em> 2023
+      </p>
+      <p class="pub">
+        “Stories from the Circle: Extended Reality (XR), Posthumanism, and Decolonizing the Design of Communication.” <em>Association for Computing Machinery Special Interest Group for the Design of Communication (ACM SIGDOC); </em>2022. 
+      </p>
+      <p class="pub">
+        “Building Community Coalitions for eCommerce: Client-based Learning and Web Development during a Pandemic Lockdown.” <em>Association for Computing Machinery Special Interest Group for the Design of Communication (ACM SIGDOC);</em> 2021. 
+      </p>
+      <p class="pub">
+        “Enduring Designs, Transient Designers: A Comparison of the Workspaces and Materials of Professionals and Novices.” <em>Association for Computing Machinery Special Interest Group for the Design of Communication (ACM SIGDOC);</em> 2020.
+      </p>
+      <p class="pub">
+        “Toward a Rhetoric of Deceit: Dark Patterns in UX Design.” <em>Association for Teachers of Technical Writing (ATTW);</em> 2018
+      </p>
+      <p class="pub">
+        “Navigating Identity in Action: How New Instructors Construct Their Professional Teaching Identity.” <em>Conference of College Composition and Communication (CCCC);</em> 2016
+      </p>
+      <p class="pub">
+        “The Learning Management System as Boundary Object: Discontinuity and Transformation.” <em>Conference of College Composition and Communication (CCCC);</em> 2015
+      </p>
+      <p class="pub">
+        “Brokering Across Administrative Boundaries: Provisional Consensus for Building ISUComm Sites.” <em>ACM Special Interest Group on Design of Communication (ACM SIGDOC);</em> 2014
+      </p>
+      <p class="pub">
+        “Digitally-Mediated Peer Review in Multimodal Composition Courses: Implications for Writing Pedagogies.” <em>Conference of College Composition and Communication (CCCC);</em> 2014
+      </p>
+      <p class="pub">
+        “The Invisible Made Visible: Virtual Peer Review in the Writing Classroom.” <em>Conference of College Composition and Communication (CCCC); 2013</em>
+      </p>
+      <p class="pub">
+        “Learning Management Systems and Writing Program Administration.” <em>Great Plains Alliance for Computers and Writing (GPACW);</em> 2012
+      </p>
+      <p class="pub">
+        “Technical Communications Role in Language Learning: What Intensive English Courses Have Taught Us.” <em>Association for Teachers of Technical Writing (ATTW)</em>. 2012
+      </p>
+      <p class="pub">
+        “Culture Jams: Critical Media Literacy in Multimodal Composition.” <em>Conference of College Composition and Communication (CCCC);</em> 2012
+      </p>
+      <p class="pub">
+        “Underlife, Cell-phones, and the Writing Classroom.” <em>Conference of College Composition and Communication (CCCC);</em> 2010
+      </p>
+      <p class="pub">
+        “Mirrors to the Heart of Poetry: Speculative Language in Laura Riding.” <em>University of Maine, English Graduate Symposium;</em> 2005
+      </p>
+      <p class="pub">
+        “When the Woods were Commons: An Ethos of Destruction in Maine Poetry.” <em>Maine Studies Award Symposium;</em> 2004
+      </p>
+    </section>
+    <section id="workshops">
+      <h2>Workshops and Instructional Presentations</h2>
+      <p class="pub">“Using WordPress Content Management for Village Governance.“ Village of Potsdam, 2023</p>
+      <p class="pub">“Copyright, Creative Commons, and Intellectual Property.” Web development club presentation, 2023</p>
+      <p class="pub">“Using WebVR for Antiracist, Decolonial Activism”. Impossible Projects symposium round table, 2022</p>
+      <p class="pub">“Rhetoric, Technology, and Boundaries.” Rhetoric and Professional Communication Colloquium, 2014</p>
+      <p class="pub">“Web Conventions and Assessing ePortfolios.” ISUComm Courses Orientation, 2014</p>
+      <p class="pub">“Getting Started with ISUComm Sites.” ISUComm Sites Workshop Series, 2014</p>
+      <p class="pub">“Intro to Teaching with ePortFolios.” ISUComm Sites Workshop Series, 2014</p>
+      <p class="pub">“Online Courses Orientation and Tutorials.” ISUComm Courses Orientation, 2011, 2012, and 2013</p>
+      <p class="pub">“ISUComm Advanced Communication Online.” ISUComm Courses Orientation, 2011, 2012, and 2013</p>
+    </section>
+    <section id="courses">
+      <h2>Courses Taught</h2>
+      <h3>Clarkson University, 2016&ndash;</h3>
+      <div class="course">
+        <p><em>COMM 429</em></p>
+        <p>Fullstack Web Development</p>
+      </div>
+      <div class="course">
+        <p><em>COMM 329</em></p>
+        <p>Frontend Development for the Web</p>
+      </div>
+      <div class="course">
+        <p><em>COMM 229</em></p>
+        <p>Principles of User Experience Design</p>
+      </div>
+      <div class="course">
+        <p><em>COMM 210</em></p>
+        <p>Rhetorical Theory for the Professions</p>
+      </div>
+      <div class="course">
+        <p><em>COMM 491</em></p>
+        <p>Independent Study (8 times)</p>
+      </div>
+      <div class="course">
+        <p><em>COMM 472</em></p>
+        <p>Teaching Assistantship (7 times)</p>
+      </div>
+      <h3>Iowa State University, 2010&ndash;&rsquo;16</h3>
+      <div class="course">
+        <p><em>ENGL 314</em></p>
+        <p>Technical Communication</p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 313</em></p>
+        <p>Rhetorical Web Design</p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 302</em></p>
+        <p>Business Communication </p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 250H</em></p>
+        <p>Honors Rhetoric and Writing II</p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 250</em></p>
+        <p>Rhetoric and Writing II </p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 150</em></p>
+        <p>Rhetoric and Writing I</p>
+      </div>
+      <h3>Husson University, 2006&ndash;&rsquo;2010</h3>
+      <div class="course">
+        <p><em>ENG 124</em></p>
+        <p>Rhetoric and Composition II</p>
+      </div>
+      <div class="course">
+        <p><em>ENG 123</em></p>
+        <p>Rhetoric and Composition I</p>
+      </div>
+      <div class="course">
+        <p><em>ENG 112</em></p>
+        <p>Approaches to Literature</p>
+      </div>
+      <div class="course">
+        <p><em>ENGL 111</em></p>
+        <p>College Writing</p>
+      </div>
+      <div class="course">
+        <p><em>ENG 091</em></p>
+        <p>Writing Workshop</p>
+      </div>
+      <h3>Kennebec Valley CC, 2006&ndash;&rsquo;07</h3>
+      <div class="course">
+        <p><em>ENG 219</em></p>
+        <p>Business and Professional Writing</p>
+      </div>
+      <h3>University of Maine, 2004&ndash;&rsquo;06</h3>
+      <div class="course">
+        <p><em>ENG 205</em></p>
+        <p>Creative Writing</p>
+      </div>
+      <div class="course">
+        <p><em>ENG 101</em></p>
+        <p>College Composition</p>
+      </div>
+    </section>
+    <section id="advising">
+      <h2>Thesis Advising and Interships</h2>
+      <div class="course">
+        <p><em>2023</em></p>
+        <p>Honors Thesis Advisor, Name Redacted</p>
+      </div>
+      <div class="course">
+        <p><em>2022</em></p>
+        <p>Honors Thesis Advisor, Name Redacted</p>
+      </div>
+      <div class="course">
+        <p><em>2021</em></p>
+        <p>Honors Thesis Advisor, Name Redacted</p>
+      </div>
+      <div class="course">
+        <p><em>2020</em></p>
+        <p>Internship Supervisor, Name Redacted</p>
+      </div>
+      <div class="course">
+        <p><em>2019</em></p>
+        <p>Internship Advisor, Name Redacted</p>
+      </div>
+      <div class="course">
+        <p><em>2018</em></p>
+        <p>Capstone Advisor, Name Redacted</p>
+      </div>
+      <h2>Student Club Advising</h2>
+      <div class="course">
+        <p><em>2022&ndash;</em></p>
+        <p>Clarkson Web Development Club
+          Faculty Advisor and founder</p>
+      </div>
+      <div class="course">
+        <p><em>2019&ndash;</em></p>
+        <p>The Clarkson <em>Integrator</em> (Newspaper)
+          Faculty Advisor</p>
+      </div>
+      <div class="course">
+        <p><em>2008&ndash;&rsquo;10</em></p>
+        <p>Husson Rifle Club Faculty Advisor</p>
+      </div>
+    </section>
+    <section id="service">
+      <h2>Professional Service</h2>
+      <h3>National Service</h3>
+      <div class="serve">
+        <p><em>2023</em></p>
+        <p>Reviewer for Student Research Competition (SRC), SIGDOC</p>
+      </div>
+      <div class="serve">
+        <p><em>2023</em></p>
+        <p>Peer reviewer for SIGDOC</p>
+      </div>
+      <div class="serve">
+        <p><em>2022</em></p>
+        <p>Peer reviewer for <em>Critical Inquiry in Language Studies</em></p>
+      </div>
+      <div class="serve">
+        <p><em>2022</em></p>
+        <p>Peer reviewer for <em>Communication Design Quarterly</em></p>
+      </div>
+      <div class="serve">
+        <p><em>2020</em></p>
+        <p>External evaluator for Applied Communication Degree, SUNY Dehli</p>
+      </div>
+      <h3>Clarkson University</h3>
+      <div class="serve">
+        <p><em>2023&ndash;</em></p>
+        <p>Chair, Information Technology Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2023&ndash;</em></p>
+        <p>Curriculum and Academic Policy Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2020&ndash;</em></p>
+        <p>Faculty Senate (Arts and Sciences Delegation)</p>
+      </div>
+      <div class="serve">
+        <p><em>2021&ndash;&rsquo;22</em></p>
+        <p>Data Governance Policy Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2020&ndash;&rsquo;21</em></p>
+        <p>Faculty Governance Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2019&ndash;&rsquo;23</em></p>
+        <p>Information Technology Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2017&dash;</em></p>
+        <p>Co-director, Audio/Usability Lab</p>
+      </div>
+      <div class="serve">
+        <p><em>2016&dash;&rsquo;18</em></p>
+        <p>Curriculum Revision Committee</p>
+      </div>
+      <h3>Iowa State University</h3>
+      <div class="serve">
+        <p><em>2012&dash;&rsquo;15</em></p>
+        <p>ISUComm Technology Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2012&dash;&rsquo;15</em></p>
+        <p>ISUComm Curriculum and Activity Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2012&dash;&rsquo;15</em></p>
+        <p>Liberal Arts and Sciences Computer Advisory Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2011&dash;&rsquo;12</em></p>
+        <p>Rhetoric and Professional Communication Phorum (Faculty Liaison)</p>
+      </div>
+      <div class="serve">
+        <p><em>2011&dash;&rsquo;13</em></p>
+        <p>Rhetoric and Professional Communication Area Group Committee</p>
+      </div>
+      <h3>Husson University</h3>
+      <div class="serve">
+        <p><em>2008&dash;&rsquo;10</em></p>
+        <p>Writing Across the Curriculum Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2008&dash;&rsquo;10</em></p>
+        <p>Basic Writing Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2008&dash;&rsquo;09</em></p>
+        <p>Co-authored and administrated curriculum for English 091 and 123</p>
+      </div>
+      <div class="serve">
+        <p><em>2008</em></p>
+        <p>Authored and administrated curriculum for English 124</p>
+      </div>
+      <div class="serve">
+        <p><em>2008&dash;&rsquo;09</em></p>
+        <p>Placement Assessment Developer and Co-coordinator</p>
+      </div>
+      <div class="serve">
+        <p><em>2006&dash;&rsquo;08</em></p>
+        <p>Faculty Evaluation and Development Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2006&dash;&rsquo;08</em></p>
+        <p>Faculty Handbook Committee</p>
+      </div>
+      <h3>University of Maine</h3>
+      <div class="serve">
+        <p><em>2004&dash;&rsquo;06</em></p>
+        <p>Policy Advisory Committee</p>
+      </div>
+      <div class="serve">
+        <p><em>2004&dash;&rsquo;06</em></p>
+        <p>Writing Center Tutor</p>
+      </div>
+    </section>
+    <section id="affiliations">
+      <h2>Professional Affiliations</h2>
+      <div class="serve">
+        <p><em>2014&ndash;</em></p>
+        <p>Special Interest Group for the Design of Communication</p>
+      </div>
+      <div class="serve">
+        <p><em>2014&ndash;</em></p>
+        <p>Association for Computing Machinery (ACM); 2014&ndash;</p>
+      </div>
+      <div class="serve">
+        <p><em>2012&ndash;</em></p>
+        <p>Association for Teachers of Technical Writing (ATTW); 2012&ndash;</p>
+      </div>
+      <div class="serve">
+        <p><em>2006&ndash;&rsquo;15</em></p>
+        <p>College Composition and Communication (CCCC); 2006&ndash;&rsquo;15</p>
+      </div>
+      <div class="serve">
+        <p><em>2006&ndash;&rsquo;15</em></p>
+        <p>National Council of Teachers of English (NCTE); 2006&ndash;&rsquo;15</p>
+      </div>
+    </section>
+    <section id="awards">
+      <h2>Awards and Scholarships</h2>
+      <p class="pub">Dr. Martin Luther King Jr. Award; 2021</p>
+      <p class="pub">Dean&rsquo;s Commendation for Excellence in Teaching; 2016, 2017, 2018, 2021</p>
+      <p class="pub">Graduate Research Excellence Award (Best dissertation); 2015</p>
+      <p class="pub">Graduate Teaching Excellence Award; 2013</p>
+      <p class="pub">W. Paul Jones Scholarship (Best article); 2012</p>
+      <p class="pub">Freda Hunke Endowment Scholarship; 2010</p>
+      <p class="pub">Steve Grady Award (First place, poetry); 2006</p>
+      <p class="pub">Maine Studies Award (First place, research); 2006</p>
+      <p class="pub">Steve Grady Award (First place, fiction); 2005</p>
+      <p class="pub">Alice T. Ayerling Leadership Scholarship; 1996</p>
+    </section>
+    <section id="profs">
+      <h2>Technical Proficiencies</h2>
+      <p class="pub">Frontend web development (HTML5, CSS3, ES6+, PHP)</p>
+      <p class="pub">User experience (research, testing)</p>
+      <p class="pub">Fullstack and dev-ops (LAMP, NodeJS)</p>
+      <p class="pub">Content / learning management (WordPress, Moodle)</p>
+      <p class="pub">Graphic design (Adobe, Figma, Sketch)</p>
+      <p class="pub">Media (image, video, 3D, hypertext)</p>
+    </section>
+    <section id="admin">
+      <h2>Web Development Administration</h2>
+      <p class="pub">Lead Technician, Village of Potsdam website</p>
+      <p class="pub">Lead Technician, Kiawentiio's site</p>
+      <p class="pub">Lead Technician, Stories from the Circle</p>
+      <p class="pub">Lead Technician, Clarkson Pepband</p>
+      <p class="pub">Lead Technician, Shipley / ANCA / eCommerce</p>
+      <p class="pub">Lead Technician, Smart Housing Project</p>
+      <p class="pub">Lead Technician, Comm and Media website</p>
+      <p class="pub">Project Lead, Lead ISUComm Sites</p>
+      <p class="pub">Online Courses Coordinator / Systems Administrator</p>
+    </section>
+    <section id="websites">
+      <h2>Selected Websites</h2>
+      <div class="site">
+        <a href="https://vi.potsdam.ny.us/" target="_blank">Village of Potsdam</a>
+        <p>Project Lead, Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="http://kairos.technorhetoric.net/27.2/topoi/york/index.html" target="_blank">Deceptive by Design</a>
+        <p>Project Lead, Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://storiesfromthecircle.org/" target="_blank">Stories from the Circle</a>
+        <p>Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://kiawentiio.com/" target="_blank">Kiawentiio's Site</a>
+        <p>Project Lead, Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://clarksonpepband.org/" target="_blank">Clarkson Pep Band</a>
+        <p>Project Lead, Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <p class="link">Smart Housing UI</p>
+        <p class="link-pair">Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://mdihistory.org/" target="_blank">MDI Historical Society</a>
+        <p>Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://giftmdi.com/" target="_blank">GiftMDI.com</a>
+        <p>Lead Designer and Developer</p>
+      </div>
+      <div class="site">
+        <a href="https://eportfolios.isucomm.iastate.edu/" target="_blank">ISUComm Sites</a>
+        <p>Lead Designer and Developer</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>&copy; 2023 Eric J. York</span>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
