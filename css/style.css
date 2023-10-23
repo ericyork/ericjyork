@@ -112,6 +112,7 @@ header.splash {
   background-size: cover;
   background-position: 50%;
   display: flex;
+  overflow-x:hidden;
 }
 div.overlay {
   flex: 1 1 100%;
@@ -479,6 +480,7 @@ a.logo {
 }
 a.logo > svg {
   height: 30px;
+  min-width: 44px;
 }
 a.logo svg > g > g {
   fill: var(--light);
