@@ -229,6 +229,7 @@ div.grad-sect {
   border-radius: var(--radius);
   background-image: var(--gradient);
   padding: .01rem 2rem 3rem 2rem;
+  transform:scale(1.035);
 }
 div.grad-sect > h2, div.grad-sect > p {
   color: var(--white);
@@ -579,7 +580,7 @@ footer.site-footer {
   #courses {grid-template-columns: 1fr;}
   #courses > div:nth-of-type(2n) {justify-self: end;}
   div.overlay {flex: 0 1 100%;clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 20% 100%);}
-  section.wrap {padding: 0 1vw 2rem 1vw; gap: 1em 2em; grid-template-columns: 1fr 1fr;}
+  section.wrap {padding: 0 1vw 2rem 1vw; gap: 1.5em 3em; grid-template-columns: 1fr 1fr;}
   header.splash{background-position: 30%;}
 }
 @media only screen and (min-width: 1080px) {
@@ -589,7 +590,7 @@ footer.site-footer {
   nav.topnav, footer.site-footer {padding: 0 4vw;}
   header.splash{background-position: 30%;}
   div.overlay {flex: 0 1 72%;clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 35% 100%);}
-  section.wrap {padding: 0 1vw 2rem 1vw; gap: 1em 2em; grid-template-columns: 1fr 1fr 1fr;}
+  section.wrap {padding: 0 1vw 2rem 1vw; gap: 2em 4em; grid-template-columns: 1fr 1fr 1fr;}
   header.splash{background-position: 30%;}
 }
 @media only screen and (min-width: 1280px) {
