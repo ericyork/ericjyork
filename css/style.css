@@ -199,11 +199,12 @@ section.wrap {
 .card  {
   padding: .5em 1em .75em 1em;
   border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 section.wrap > .card > img {
+  border: 1px solid var(--mid);
   border-radius: var(--radius);
   margin-top: .5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 section.wrap > .card.blank > img {
   box-shadow: none;
@@ -249,8 +250,12 @@ div.grad-sect > section {
   border-radius: var(--radius);
   background-image: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.9) 17%, rgba(255,255,255,0.5) 34%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.5) 66%, rgba(255,255,255,0.9) 83%, rgba(255,255,255,0.5) 100%);
 }
-div.grad-sect .card {
+div.grad-sect .card, .teach .card {
   padding: 0;
+  box-shadow: none;
+}
+section.wrap.teach .card > img {
+  border: none;
 }
 .contact-card {
   display: flex;
