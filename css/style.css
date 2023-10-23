@@ -112,7 +112,7 @@ header.splash {
   background-size: cover;
   background-position: 50%;
   display: flex;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 div.overlay {
   flex: 1 1 100%;
@@ -428,7 +428,7 @@ p.pub a, p.pub a:link, p.pub a:visited {
 }
 .site a, .site a:link, .site a:visited {
   color: var(--midark);
-  font-family: 'Spectral', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 1.1em;
 }
@@ -442,7 +442,7 @@ p.pub a, p.pub a:link, p.pub a:visited {
 .site p.link {
   color: var(--midark);
   font-style: normal;
-  font-family: 'Spectral', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 1.1em;
   margin-bottom: 0;
@@ -537,7 +537,7 @@ footer.site-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--system);
+  font-family: 'Lato', sans-serif;
   color: var(--white);
 }
 /*---------------------
