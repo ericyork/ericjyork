@@ -475,7 +475,6 @@ a.logo {
   display: flex;
   padding-top: 5px;
   margin-top: auto;
-  margin-right: auto;
   margin-bottom: auto;
   border-bottom: none;
 }
@@ -570,6 +569,7 @@ footer.site-footer {
   section.wrap {padding: 0 1vw 2rem 1vw; gap: 1em 2em; grid-template-columns: 1fr;}
   header.splash{background-position: 40%;}
   nav.topnav {flex-wrap: nowrap; justify-content: space-between;}
+  a.logo {margin-right: auto;}
 }
 @media only screen and (min-width: 768px) {
   body {font-size: 1.6rem;}
