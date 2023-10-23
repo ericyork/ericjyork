@@ -479,7 +479,11 @@ a.logo {
   margin-bottom: auto;
   border-bottom: none;
 }
-a.logo > svg {
+a.logo > div {
+  display: flex;
+  width: 144px;
+}
+a.logo svg {
   height: 30px;
   min-width: 44px;
 }
@@ -490,7 +494,7 @@ a.logo svg > g > g {
 a.logo:hover svg > g > g {
   fill: var(--white);
 }
-a.logo > span {
+a.logo > div > span {
   padding-top: 3px;
   transform: translateX(-4px);
   font-family: 'Lato', sans-serif;
