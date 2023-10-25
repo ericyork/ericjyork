@@ -5,9 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 :root {
+  --dcolor: #3f26c0;
   --color: #6245F8;
   --lcolor: #8B75FA;
-  --gradient: linear-gradient(135deg, #16222a, #3a6073);
+  /* --gradient: linear-gradient(225deg, #16222a, #3a6073); */
+  /* --gradient: linear-gradient(225deg, #0f2027, #203a43, #2c5364);  */
+  --gradient: linear-gradient(225deg, #0f0c29, #302b63, #24243e);
   --dark: #16222a;
   --midark: #27404d;
   --ldim: #4B7D95;
@@ -48,8 +51,8 @@ a, a:link, a:visited {
   font-size: 0.95em;
 }
 a:hover, a:active {
-  color: var(--lcolor);
-  border-bottom-color: var(--lcolor);
+  color: var(--dcolor);
+  border-bottom-color: var(--dcolor);
 }
 main.home-main {
   margin-top: 6rem;
@@ -100,7 +103,8 @@ nav.topnav {
   gap: 2rem;
   text-transform: uppercase;
   font-weight: var(--reg);
-  border-bottom: 1px solid var(--light);
+  border-bottom: 2px solid var(--color);
+  box-shadow: -1px 4px 16px rgba(0,0,0, 0.25);
 }
 a.logo {
   display: flex;
@@ -175,9 +179,12 @@ header.splash {
   background-size: cover;
   display: flex;
   overflow-x: hidden;
+  position: relative;
+  box-shadow: -1px 4px 16px rgba(0,0,0,0.25);
 }
 div.overlay {
   width: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -185,11 +192,36 @@ div.overlay {
 }
 div.text {
   background: rgba(220,227,228,.85);
-  padding: 0 6rem 3rem 6rem;
+  padding: 0 6rem 4rem 6rem;
   min-width: 400px;
   max-width: 520px;
   margin-top: 0;
   margin-right: 0;
+  position: relative;
+  border-radius: var(--radius);
+}
+div.text {
+  background-color: #dce3e4;
+  background-image: url();
+}
+div.text > a {
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  padding: .4em 3.6em;
+  margin-top: 1.5rem;
+  background-color: var(--color);
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  border-radius: 50px;
+  border: 2px solid var(--light);
+  box-shadow: -1px 4px 16px rgba(0,0,0,.25);
+}
+div.text > a:hover {
+  background-color: var(--dcolor);
 }
 .text > h2 span {
   color: var(--color);
@@ -201,7 +233,7 @@ div.text h1 {
   color:var(--dark);
   font-weight: 300;
   font-size: 3.2rem;
-  margin-top: 1.5em;
+  margin-top: 1.4em;
   margin-bottom: .5rem;
 }
 div.text h1 em {
@@ -224,15 +256,36 @@ div.text p {
   font-weight: 400;
   font-size: 1.6rem;
 }
+div.gradient {
+  background-image: var(--gradient);
+  /* background-color: var(--color); */
+  height: .9rem;
+  width: 100%;
+  position: relative;
+}
+div.gradient.mid {
+  margin: 4rem auto;
+  border-radius: 1rem;
+}
 nav.locations {
+  position: sticky;
+  top: var(--height);
+  z-index: 200;
+  width: 62%;
+  min-width: 400px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 2.4rem;
   flex-direction: row;
   justify-content: space-evenly;
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  background-color:var(--light);
+  padding: .8em 1em;
+  border-top: 0;
+  border: 2px solid var(--color);
+  border-radius: 0 0 .6rem .6rem;
+  box-shadow: 1px 4px 16px rgba(0,0,0,0.25);
 }
 .locations a {
   flex: 0 0 33%;
@@ -247,17 +300,7 @@ nav.locations {
   color: var(--color);
 }
 .locations a:hover, .locations a:active {
-  color: var(--lcolor);
-}
-div.gradient {
-  transform: translateY(-1px);
-  background-image: var(--gradient);
-  height: .9rem;
-  width: 100%;
-}
-div.gradient.mid {
-  margin: 4rem auto;
-  border-radius: 1rem;
+  color: var(--dcolor);
 }
 section.wrap {
   display: grid;
@@ -269,10 +312,10 @@ section.wrap {
   padding: .5em 1em .75em 1em;
   border-radius: var(--radius);
   transition: var(--std);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: -1px 4px 16px rgba(0,0,0,0.25);
 }
 .card:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  box-shadow: -1px 2px 8px rgba(0,0,0,0.45);
 }
 .card a {
   border: none;
@@ -540,6 +583,7 @@ footer.site-footer {
   justify-content: center;
   font-family: 'Lato', sans-serif;
   color: var(--white);
+  border-top: 2px solid var(--color);
 }
 /*---------------------
 ---- Media Queries ----
