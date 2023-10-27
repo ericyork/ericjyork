@@ -91,7 +91,7 @@ nav.topnav {
   background-image: var(--gradient);
   /* background-color: var(--deep); */
   min-height: var(--height);
-  padding: 1em; 2vw;
+  padding: 1em 2vw;
   position: fixed;
   top: 0;
   z-index: 25;
