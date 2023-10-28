@@ -227,6 +227,10 @@ div.text > a {
 div.text > a:hover {
   background-color: var(--dcolor);
 }
+div.text > a > svg {
+  width: 3rem;
+  height: 3rem;
+}
 .text > h2 span {
   color: var(--color);
 }
@@ -407,10 +411,17 @@ header p, header p:not(p:last-of-type) {
   margin-bottom: .5em;
   font-size: 1.1em;
 }
-.contact p {
+.contact a {
+  text-decoration: none;
+  border-bottom: none;
   display: flex;
   align-items: flex-start;
-  gap: .9em;
+  margin-bottom: 1em;
+  gap: .5em;
+}
+.contact a > svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 address {
   display: flex;
