@@ -1,3 +1,4 @@
+progress,sub,sup{vertical-align:baseline}*,::after,::before{box-sizing:border-box}html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;appearance:button;}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:ButtonText dotted 1px}:-moz-ui-invalid{box-shadow:none}legend{padding:0}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none;appearance:none;}::-webkit-file-upload-button{-webkit-appearance:button;appearance:button;font:inherit}summary{display:list-item}html{font-size:62.5%;}body{font-size:1.6rem;}img{width:100%;height:auto;user-select:none;}button{color:inherit;}a,button{touch-action: manipulation;}svg{height:100%;width:100%;fill:currentColor;pointer-events:none;}iframe,video{display:inline-block;height:auto;width:100%;margin:0;padding:0;}main,header,footer,section,div,article,aside,figure,table,form{margin:0;padding:0;}
 /*---------------
 --- Defaults ---
 ----------------*/
@@ -43,16 +44,16 @@ p:not(p:last-of-type) {
 }
 a, a:link, a:visited {
   text-decoration: none;
-  color: var(--color);
+  color: var(--dcolor);
   padding-bottom: 2px;
-  border-bottom: 1px dashed var(--color);
+  border-bottom: 1px dashed var(--dcolor);
   transition: var(--std);
   font-weight: 400;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 a:hover, a:active {
-  color: var(--dcolor);
-  border-bottom-color: var(--dcolor);
+  color: var(--color);
+  border-bottom-color: var(--color);
 }
 main.home-main {
   margin-top: 6rem;
@@ -331,11 +332,12 @@ section.wrap .card img {
   border: 1px solid var(--ldim);
   border-radius: var(--radius);
   margin-top: .5rem;
+  aspect-ratio: auto 400 / 300;
 }
 section.wrap > .card.blank > img {
   box-shadow: none;
 }
-.card h4 {
+.card h3 {
   font-weight: 700;
   font-size: 1.2em;
   margin-top: .5em;
@@ -349,7 +351,7 @@ span.lead {
   font-size: 1.2em;
 }
 .lead strong {
-  color: var(--color);
+  color: var(--dcolor);
 }
 div.grad-sect {
   margin: 4rem auto 6rem auto;
@@ -625,6 +627,7 @@ footer.site-footer {
   div.text h1 {font-size: 4rem;}
   div.text h2 {font-size: 2.2rem;}
   div.text p {font-size: 1.8rem;}
+  .lead strong {color: var(--color);}
 }
 @media only screen and (min-width: 1080px) {
   body {font-size: 1.6rem;}
