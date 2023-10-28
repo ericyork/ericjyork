@@ -174,7 +174,7 @@ h2#research, h2#design, h2#teaching {
   align-items: flex-end;
 }
 header.splash {
-  background-image: url('../media/splash.png');
+  background-image: url('../media/splash.webp');
   background-repeat: no-repeat;
   width: 100%;
   height: 520px;
