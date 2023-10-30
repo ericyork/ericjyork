@@ -196,8 +196,8 @@ div.overlay {
 div.text {
   background: rgba(220,227,228,.85);
   padding: 0 6rem 4rem 6rem;
-  min-width: 400px;
-  max-width: 520px;
+  min-width: 360px;
+  max-width: 480px;
   margin: 0 4vw 0 4vw;
   position: relative;
   border-radius: var(--radius);
@@ -260,7 +260,7 @@ div.text h2 strong {
   font-weight: 400;
 }
 div.text p {
-  line-height: 1.8;
+  line-height: 1.4;
   font-weight: 400;
   font-size: 1.6rem;
 }
@@ -648,7 +648,7 @@ footer.site-footer {
   section.wrap {padding: 0 1vw 2rem 1vw; gap: 2em 4em; grid-template-columns: 1fr 1fr 1fr;}
   div.text h1 {font-size: 4.6rem;}
   div.text h2 {font-size: 2.3rem;}
-  div.text p {font-size: 1.8rem;}
+  div.text p {font-size: 1.9rem;}
 }
 @media only screen and (min-width: 1280px) {
   body {font-size: 1.7rem;}
@@ -657,7 +657,7 @@ footer.site-footer {
   nav.topnav, footer.site-footer {padding: 0 5vw;}
   div.text h1 {font-size: 5.2rem;}
   div.text h2 {font-size: 2.5rem;}
-  div.text p {font-size: 1.8rem;}
+  div.text p {font-size: 2rem;}
 }
 @media only screen and (min-width: 1440px) {
   body {font-size: 1.8rem;}
