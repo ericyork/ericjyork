@@ -659,7 +659,7 @@ footer.site-footer {
   }
 }--*/
 @media only screen and (min-width: 550px) {
-  section.wrap {padding: 0 1vw 2rem 1vw; gap: 1em 2em; grid-template-columns: 1fr;}
+  .wrap {padding: 0 1vw 2rem 1vw; gap: 1em 2em; grid-template-columns: 1fr;}
   nav.topnav {flex-wrap: nowrap; justify-content: space-between;}
   a.logo {margin-right: auto; margin-left: 2vw; flex-grow: 0; flex-basis:content;}
   div.text {min-width: 490px;margin-top: 6vw; margin-right: 8vw;}
