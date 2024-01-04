@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Professional website and portfolio of Eric J. York">
-  <title>Eric J. York</title>
+  <title>Design | ericjyork.com</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:wght@700&display=swap" rel="stylesheet">  
@@ -25,54 +26,331 @@
       <span>ric J. York</span>
       </div>
     </a>
-    <a href="#research">Research</a>
-    <a href="design.html">Design</a>
-    <a href="#teaching">Teaching</a>
+    <a href="research.html">Research</a>
+    <a href="design.html" class="current">Design</a>
+    <a href="teaching.html">Teaching</a>
     <a href="cvitae.html">C.V.</a>
     </a>
   </nav>
   <main class="design-main">
-    <h1>Design and Development</h1>
+    <h1>Design <span class="thin">and</span> Development</h1>
     <section class="page-header">
-      <p>Primarily, I'm a <strong>technical communicator</strong>. My strengths are writing, research, UX and graphic design, and fullstack web development. The breadth and depth of my experience also allows me plan and manage projects, and to provide art direction and content strategy.</p>
-      <h2>Proficiencies</h2>
+      <p>Primarily, I'm a <strong>technical communicator</strong>. My strengths are <strong>writing, research, UX and graphic design</strong>, and <strong>fullstack web development</strong>. The breadth and depth of my experience also allows me plan and manage projects, and to provide art direction and content strategy. <a href="#details">More details</a></p>
     </section>
-    <hr>
-    <h2>Websites</h2>
-    <p>A selection of websites I've designed and built.</p>
+    <h3 class="proficiencies">
+      <button class="see-all" onclick="show()">
+        <span id="btn-text">See all</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+      </button>
+      <div id="m-container" class="marquee-container">
+        <div id="m-content" class="marquee-content">
+          <div class="icon-group">
+            <span class="devicon devicon-apple-original"></span>
+            <span class="icon-label">MacOS</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-linux-plain"></span>
+            <span class="icon-label">Linux</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-html5-plain"></span>
+            <span class="icon-label">HTML</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-css3-plain"></span>
+            <span class="icon-label">CSS</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-javascript-plain"></span>
+            <span class="icon-label">ES6+</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-nodejs-plain"></span>
+            <span class="icon-label">Node</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-jquery-plain"></span>
+            <span class="icon-label">jQuery</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-php-plain"></span>
+            <span class="icon-label">PHP</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-mysql-plain"></span>
+            <span class="icon-label">MySQL</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-wordpress-plain"></span>
+            <span class="icon-label">Wordpress</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-ruby-plain"></span>
+            <span class="icon-label">Ruby</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-rails-plain"></span>
+            <span class="icon-label">Rails</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-svelte-plain"></span>
+            <span class="icon-label">Svelte</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-apache-plain"></span>
+            <span class="icon-label">Apache</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-bash-plain"></span>
+            <span class="icon-label">Bash</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-eleventy-plain"></span>
+            <span class="icon-label">11ty</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-figma-plain"></span>
+            <span class="icon-label">Figma</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-sketch-line"></span>
+            <span class="icon-label">Sketch</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-filezilla-plain"></span>
+            <span class="icon-label">Filezilla</span>
+          </div>
+          <div class="icon-group">
+             <span class="devicon devicon-git-plain"></span>
+             <span class="icon-label">Git</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-handlebars-plain"></span>
+            <span class="icon-label">Handlebars</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-markdown-plain"></span>
+            <span class="icon-label">Markdown</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-bootstrap-plain"></span>
+            <span class="icon-label">Bootstrap</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-moodle-plain"></span>
+            <span class="icon-label">Moodle</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-npm-original-wordmark"></span>
+            <span class="icon-label">NPM</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-react-plain"></span>
+            <span class="icon-label">React</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-tailwindcss-plain"></span>
+            <span class="icon-label">TailwindCSS</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-vagrant-plain"></span>
+            <span class="icon-label">Vagrant</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-vscode-plain"></span>
+            <span class="icon-label">VScode</span>
+          </div>
+          <div class="icon-group">
+            <span class="devicon devicon-digitalocean-plain"></span>
+            <span class="icon-label">Digital Ocean</span>
+          </div>
+        </div><!--end.marquee-content-->
+      </div><!--end.marquee-container-->
+    </h3>
+    <h2>Selected Projects</h2>
     <section class="wrap">
       <div class="card">
         <a href="https://clarksonbrainstem.org/" target="_blank">
-          <img src="media/01_brainstem.webp" alt="screen capture of page">
-          <h3>S.E.P.A. Brain-STEM</h3>
+          <img src="media/01_brainstem.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>S.E.P.A. Brain-STEM</h4>
+            <p>Lead technician</p>
+            <p>Wordpress, Moodle, Cloud</p>
+          </div>
         </a>
-      </div>
+      </div><!--end.card-->
       <div class="card">
-        <a href="https://storiesfromthecircle.org/" target="_blank">
-        <img src="media/03_stories.webp" alt="screen capture of page">
-        <h3>Stories from the Circle</h3>
-      </a>
-      </div>
-      <div class="card">
-        <a href="http://ownanorthcountrybusiness.com/" target="_blank">
-        <h3>Web Commerce for Pandemic Response</h3>
-        <img src="media/04_nccbit.webp" alt="screen capture of page" loading="lazy" >
-        <p><span class="lead"><strong>$14k</strong></span> <em>PI</em> and <em>Lead Technician</em>. Developing  websites for regional businesses closed by the pandemic lockdown. Adirondack North Country Association (ANCA) and the Shipley Center. 2021</p>
+        <a href="https://clarksonbrainstem.org/" target="_blank">
+          <img src="media/08_pepband.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Clarkson Pep Band</h4>
+            <p>Project lead</p>
+            <p>Wordpress themeing, shared DHCP</p>
+          </div>
         </a>
-      </div>
+      </div><!--end.card-->
       <div class="card">
         <a href="https://vi.potsdam.ny.us/" target="_blank">
-        <h3>Local Government Content Strategy</h3>
-        <img src="media/05_village.webp" alt="screen capture of page" loading="lazy" >
-        <p><span class="lead"><strong>Student Internship.</strong></span> <em>PI</em>. Embedding senior web development majors with local governence to strengthen community ties and professionalization experiences. Village of Potsdam. 2023.</p>
+          <img src="media/05_village.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Village of Potsdam</h4>
+            <p>Project lead</p>
+            <p>Wordpress themeing, managed cloud</p>
+          </div>
         </a>
-      </div>
+      </div><!--end.card-->
+      <div class="card">
+        <a href="https://clarksonbrainstem.org/" target="_blank">
+          <img src="media/09_kiawentiio.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Kiawentiio</h4>
+            <p>Project lead</p>
+            <p>Wordpress themeing, shared DHCP</p>
+          </div>
+        </a>
+      </div><!--end.card-->
+      <div class="card">
+        <a href="https://storiesfromthecircle.org/" target="_blank">
+          <img src="media/03_stories.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Stories from the Circle</h4>
+            <p>Lead technician</p>
+            <p>Core, serverless</p>
+          </div>
+        </a>
+      </div><!--end.card-->
+      <div class="card">
+        <a href="http://ownanorthcountrybusiness.com/" target="_blank">
+          <img src="media/04_nccbit.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>NCCBIT Website</h4>
+            <p>Lead technician</p>
+            <p>Core, shared DHCP</p>
+          </div>
+        </a>
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/darkpatterns.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Deceptive by Design</h4>
+            <p>Project lead</p>
+            <p>Core, serverless</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
       <div class="card">
         <a href="https://eportfolios.isucomm.iastate.edu/sample-eportfolios/" target="_blank">
-        <h3>ISUComm Sites</h3>
-        <img src="media/06_intro.webp" alt="screen capture of page" loading="lazy" >
-        <p><span class="lead"><strong>Research Assistantship.</strong></span> <em>PI</em>. Graduate research assistants working to build and maintain a web publishing platform for teaching. ISUComm Foundation Courses. 2013.</p>
-      </a>
+          <img src="media/recruit.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Recruitment Site</h4>
+            <p>Project lead</p>
+            <p>Bootstrap, serverless</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/advanced.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Advanced Comm</h4>
+            <p>Project lead</p>
+            <p>Wordpress, multisite, custom hosting</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/blackbear.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Black Bear Brewing</h4>
+            <p>Project lead</p>
+            <p>Wordpress, managed hosting</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/eidolon.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Eidolon blog</h4>
+            <p>Project lead</p>
+            <p>Core, ruby, jekykll, liquid, serverless</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/giftmdi.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Gift MDI</h4>
+            <p>Lead technician</p>
+            <p>Wordpress, woocommerce, DHCP</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/intro.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Foundation Comm</h4>
+            <p>Project lead</p>
+            <p>Wordpress, multisite, custom hosting</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/journals.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>TPC Journals Listing</h4>
+            <p>Project lead</p>
+            <p>Core, serverless</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/mdihistory.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>MDI Historical</h4>
+            <p>Lead technician</p>
+            <p>Wordpress, custom theme, DHCP</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+      <div class="card">
+        <a href="link" target="_blank">
+          <img src="media/newman.webp" alt="screen capture of page" loading="lazy" >
+          <div class="card-wrap">
+            <h4>Newman Marine</h4>
+            <p>Lead technician</p>
+            <p>Wordpress, custom theme, DHCP</p>
+          </div>
+        </a>      
+      </div><!--end.card-->
+    </section>
+    <h2 id="details">Details</h2>
+    <section class="two-col">
+      <div class="col">
+        <h3>Roles</h3>
+          <ul>
+            <li><em>Project lead</em>: Project manager, sales, stakeholders, plus lead technician</li>
+            <li><em>Lead technician</em>: Dev ops; lead developer and designer</li>
+            <li><em>Lead developer</em>: code authoring and implementation</li>
+            <li><em>Lead designer</em>: graphic assets, layout, concepts, logos</li>
+          </ul>
+        </p>
+      </div>
+      <div class="col">
+        <h3>Stacks</h3>
+          <ul>
+            <li><em>Core</em>: Vanilla HTML, CSS, JS</li>
+            <li><em>WordPress</em>: Fullstack wordpress development; PHP and themeing</li>
+            <li><em>Frameworks</em>: Includes SSGs, frameworks, and libraries,</li>
+            <li><em>Dev Ops</em>: Cloud, serverless, servers, DHCP</li>
+          </ul>
+        </p>
       </div>
     </section>
   </main>
@@ -90,6 +368,6 @@
       </a>
     </div>
   </footer>
-  <!-- <script src="main.js"></script> -->
+  <script src="main.js"></script>
 </body>
 </html>
