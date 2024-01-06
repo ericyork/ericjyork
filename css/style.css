@@ -32,7 +32,7 @@ html {
   --faded: .75;
   --reg: 400;
   --bold: 700;
-  --height: 5.8rem;
+  --height: 6.4rem;
   --radius: .6rem;
   --std: all 200ms ease-in-out;
   --long: all 500ms ease-in-out;
@@ -253,7 +253,7 @@ div.text > a {
   align-self: center;
   padding: .4em 3.6em;
   margin-top: 1.5rem;
-  background-color: var(--color);
+  background-color: var(--dcolor);
   color: var(--white);
   font-size: 1em;
   font-weight: var(--reg);
@@ -266,7 +266,7 @@ div.text > a {
   justify-content: center;
 }
 div.text > a:hover {
-  background-color: var(--dcolor);
+  background-color: var(--color);
 }
 div.text > a:active {
   transform: scale(.95);
