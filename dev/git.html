@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-git</title>
+  <style>
+  body {width: 70ch;margin: 1em auto;background: #222;color:#ccc;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";line-height: 1.75;font-size:1.2rem;}
+  main {display: grid; grid-template-columns: 1fr 1fr;}
+  @media screen and (max-width: 768px){main {grid-template-columns: 1fr;}}
+  a:link{color:#6789ab;}
+  a:active{color:#eee;}
+  a:hover{color:#1cd8d8;}
+  a:visited{color:#789abc;}
+  a:visited:hover{color:#1cd8d8;}
+  .step {background: #2a2a2a;margin: 1em 0; padding: 1em;border: 1px solid #444;border-radius:4px;}
+  code {font-size: 1rem; color: #333; white-space: pre-wrap; background: #bcbcbc; padding: .2rem .5rem; border-radius: 5px;}
+  pre {font-size: 1rem; color: #333; white-space: pre-wrap; background: #bcbcbc; padding: .5rem .8rem; border-radius: 5px;}
+  h3 {color:#1cd8d8; border-bottom: 1px solid #1cd8d8; padding-bottom: 0.2rem; font-size: 1.8rem; margin-bottom: .5rem; line-height: 1.1;}
+  p {padding-top: 0;margin-top:0;}
+  img {width: 100%; height: auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="how-to-work-with-git">How to Work with Git</h1>
+<p>Before too long, you’ll want to get your server working with some kind of version control, and <code>git</code> is probably the one with which you’re most familiar. Setting up git on your server is straight-forward, but there are some gotchas to watch for.</p>
+<div class="step">
+<h3 id="prerequisites">Prerequisites</h3>
+<p>You’ll need to have a non-root user account with sudo privileges. Git should already be installed as part of your OS, but if it’s not, you’ll need to install it (using <code>apt</code> or <code>curl</code>). You can check to see if it’s installed by running <code>git --version</code> in your terminal. Finally, you’ll need an authenticated user account on github.com, since that’s where we’ll be hosting our repositories.</p>
+</div>
+<div class="step">
+<h3 id="step-one-create-a-repo">Step One: Create a Repo</h3>
+<p>The easiest way to begin is to create a new repository either from your github client or over on github.com. Just initialize it with a readme, make sure it’s not private, and publish it. Then, visit the repository main page, open the dropdown next to the “Code” button, and copy the URL from the Clone via HTTPS section (right at the top, there). You’ll need this URL in a moment.</p>
+</div>
+<div class="step">
+<h3 id="step-two-connect-to-your-server">Step Two: Connect to your Server</h3>
+<p>Now, using SSH, connect to your server and navigate to the directory within which you want your repo to appear. It’s important to understand how git works. If you have a repo named “sample” and you clone it from <code>home/username/sub</code>, then the path to your repo will be <code>home/username/sub/sample</code>. In other words, the repo directory will appear wherever you run the clone command, so don’t create a folder on your server and run the clone from inside that . . . you’ll have too many folders :)</p>
+<p>Example:</p>
+<pre><code>$  cd ../../var/www/myDomain/subDirectory</code></pre>
+</div>
+<div class="step">
+<h3 id="step-three-clone-the-repo">Step Three: Clone the Repo</h3>
+<p>It’s all downhill from here. Go ahead and clone the repo to the directory.</p>
+<pre><code>$ git clone https://github.com/username/name_of_repo.git</code></pre>
+<p>This should pull in the readme, as well as some hidden files. Confirm it worked by reading your directory. After running the command below, you should see the new files listed.</p>
+<pre><code>$ cd name-of-repo</code><br><code>$ ls -al</code></pre>
+</div>
+<div class="step">
+<h3 id="step-four-scaffold-the-project-stage-the-changes">Step Four: Scaffold the Project, Stage the Changes</h3>
+<p>Go ahead and make an index file, any sub-directories, and any css and js files you’ll need. When you’re finished, run the command below. The <code>add</code> command tells git to stage the changes, and the asterisk (*) tells git to stage <strong>all</strong> the changes.</p>
+<pre><code>$ git add *</code></pre>
+</div>
+<div class="step">
+<h3 id="step-five-commit-the-changes">Step Five: Commit the Changes</h3>
+<p>After staging, you can commit. The command below uses the <code>-m</code> flag to add a commit message, and the words inside quotes are the message that will be attached to the commit. <strong>Always add a commit message to your commits!</strong></p>
+<pre><code>$ git commit -m &quot;scaffolds project directories&quot;</code></pre>
+</div>
+<div class="step">
+<h3 id="step-six-push-the-changes">Step Six: Push the Changes</h3>
+<p>Now, after you’ve staged and committed the changes, you can go ahead and send them to the remote origin using the command below.</p>
+<pre><code>$ git push</code></pre>
+<p>You’ll be prompted to enter the username and password to the github repo you’re pushing to. Once you’ve done that, you should see some output showing the push was successful. Then, go over to github.com and view the repo page to confirm that the changes you made are appearing.</p>
+</div>
+<div class="step">
+<h3 id="step-seven-make-changes-somewhere-else">Step Seven: Make Changes Somewhere Else</h3>
+<p>Either on github.com or on your local machine, make some changes to the project. On Github.com you can just edit the raw version of the file, and on your local machine you’ll need to pull down the changes to the project (by synching). Once you’ve done that, make some simple changes to the file and save and publish them.</p>
+<p>Then, back on your server run the following command to update the version of the project on your server.</p>
+<pre><code>$ git pull</code></pre>
+<p>Verify that the files on your server contain the changes made elsewhere.</p>
+</div>
+<div class="step">
+<h3 id="thats-it">That’s it!</h3>
+<p>Congrats, you’ve set up git and used a simple workflow to add version control to your projects.</p>
+</body>
+</html>

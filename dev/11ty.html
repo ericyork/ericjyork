@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-11ty</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color: initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <style>
+  body {width: 70ch;margin: 1em auto;background: #222;color:#ccc;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";line-height: 1.75;font-size:1.2rem;}
+  main {display: grid; grid-template-columns: 1fr 1fr;}
+  @media screen and (max-width: 768px){main {grid-template-columns: 1fr;}}
+  a:link{color:#6789ab;}
+  a:active{color:#eee;}
+  a:hover{color:#1cd8d8;}
+  a:visited{color:#789abc;}
+  a:visited:hover{color:#1cd8d8;}
+  .step {background: #2a2a2a;margin: 1em 0; padding: 1em;border: 1px solid #444;border-radius:4px;}
+  pre {padding: .2rem .5rem;}
+  code {font-size: 1rem; color: #333; white-space: pre-wrap; padding: .2rem 0; background: #bcbcbc; border-radius: 5px;}
+  .sourceCode{ overflow: scroll;}
+  p > code {padding-right: .5rem; padding-left: .5rem;white-space: nowrap;}
+  pre {font-size: 1rem; color: #333; white-space: pre-wrap; background: #bcbcbc; padding: .5rem .8rem; border-radius: 5px;}
+  h2 {color:#838383; border-bottom: 1px solid #838383; padding-bottom: 0.4rem; font-size: 1.6rem; margin-bottom: .67rem; line-height: 1.1;}
+  p {padding-top: 0;margin-top:0;}
+  img {width: 100%; height: auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="how-to-set-up-11ty-alpinejs-and-tailwind-css-using-vite">How to Set up 11ty, AlpineJS, and Tailwind CSS using Vite</h1>
+<p>Eleventy, Alpine, Tailwind and Vite are bleeding edge tools for enabling rapid development using JS. This stack allows you to convert markdown to html, add javascript and css to the render, and bundle it all up to deploy at the smallest sizes possible. However, getting all of them to work together nicely is no mean feat, so that’s what this guide is for.</p>
+By way of introduction, Eleventy is a static site generator that allows structuring and templating content using a variety of templating languages, AlpineJS is a lightweight library for UI enhancement, Tailwind CSS is the utility-first stylesheet framework, and Vite is a very fast bundler and development server. Together, they make a powerful full stack JAM stack.
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To follow this guide, you’ll need a good IDE (like VSCode), <code>node</code> and <code>npm</code>, basic knowledge of markdown, HTML, CSS, and JS, and the ability to work from a Linux-like command line.</p>
+<div class="step">
+<h2 id="initialize-vite">1. Initialize Vite</h2>
+<p>First things first, find a good folder to work in, such as your desktop or documents folder, and navigate there in your terminal. Initialize the latest Vite in a new directory, call it <code>whatever_you_like</code> and scaffold it using the vanilla javascript template. Then, change into that new directory, like so.</p>
+<pre class="sourceCode bash" id="cb1"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1">$  <span class="ex">npm</span> init vite@latest whatever_you_like -- --template vanilla</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">$  <span class="bu">cd</span> whatever_you_like</a></code></pre>
+</div>
+<div class="step">
+<h2 id="install-development-dependencies">2. Install Development Dependencies</h2>
+<p>Vite has already created some files, and we’re about to add a bunch more. Make sure you’re at the <strong>top level</strong> of your project directory in the terminal and run the command below. It’ll take a little while, since you’re bringing in so many files.</p>
+<pre class="sourceCode bash" id="cb2"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1">$  <span class="ex">npm</span> install -D @11ty/eleventy tailwindcss postcss autoprefixer alpinejs</a></code></pre>
+<p>There’s a bunch of other things you could bring in if you wanted, like plugins for the libraries you just installed such as <code>@alpinejs/intersect</code> for example, or additional libs, like <code>html-minifier</code>, but you can also install them later. For now, just stay focused.</p>
+</div>
+<div class="step">
+<h2 id="set-up-11ty-infrastructure">3. Set up 11ty Infrastructure</h2>
+<p>Now is a good time to lay some basic groundwork. First, remove a few placeholder files (to be replaced later) and then create your directories. Go ahead and create a bunch of new files, while you’re at it.</p>
+<pre class="sourceCode bash" id="cb3"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$  <span class="fu">rm</span> index.html style.css main.js</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">$  <span class="fu">mkdir</span> _site src dist src/_data src/_includes src/images src/public src/styles</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">$  <span class="fu">touch</span> vite.config.js .eleventy.js src/_includes/base.html src/styles/style.css src/index.md src/main.js</a></code></pre>
+<p>You can break these up into multiple commands, if you want to take them slow, or just run them altogether.</p>
+</div>
+<div class="step">
+<h2 id="initialize-tailwind-css">4. Initialize Tailwind CSS</h2>
+<p>Tailwind needs some additional configuration. You can do this by running the command below from within your project directory.</p>
+<pre class="sourceCode bash" id="cb4"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1">$  <span class="ex">npx</span> tailwindcss init -p</a></code></pre>
+<p>After it’s done, go ahead and take a look at both <code>postcss.config.js</code> as well as <code>tailwind.config.js</code> just to make sure they got created. You’ll needto make some adjustments to the latter one in a bit.</p>
+</div>
+<div class="step">
+<h2 id="inspect-the-rest-of-your-file-structure">5. Inspect the rest of your file structure</h2>
+<p>Right now, the top level of your project directory should look like this:</p>
+<pre class="sourceCode bash" id="cb5"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">.</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">├── <span class="ex">.eleventy.js</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">├── <span class="ex">.gitignore</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">├── <span class="ex">_site</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">├── <span class="ex">dist</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">├── <span class="ex">favicon.svg</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">├── <span class="ex">node_modules</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">├── <span class="ex">package-lock.json</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">├── <span class="ex">package.json</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">├── <span class="ex">postcss.config.js</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">├── <span class="ex">src</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">├── <span class="ex">tailwind.config.js</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">└── <span class="ex">vite.config.js</span></a></code></pre>
+<p>The <code>_site</code> and <code>dist</code> directories should be empty, but the <code>src</code> directory should be well-stocked. It should look like the below.</p>
+<pre class="sourceCode bash" id="cb6"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">src</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">├── <span class="ex">_data</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">├── <span class="ex">_includes</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">│   └── <span class="ex">base.html</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">├── <span class="ex">images</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">├── <span class="ex">index.md</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">├── <span class="ex">main.js</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">├── <span class="ex">public</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">└── <span class="ex">styles</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">    └── <span class="ex">style.css</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="configure-tailwind">6. Configure Tailwind</h2>
+<p>The next step is kind of tedious, but super important so make doubly sure you’re not making any careless typos. You’ll be writing, or in some cases overwriting, content in files you’ve made in previous steps, so make sure to add the right text to the right files :).</p>
+<p>Start with <code>tailwind.config.js</code>.</p>
+<pre class="sourceCode js" id="cb7"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">/*-- tailwind.config.js --*/</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="dt">content</span><span class="op">:</span> [<span class="st">&#39;./src/**/*.html&#39;</span><span class="op">,</span> <span class="st">&#39;./src/**/*.md&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="dt">theme</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="dt">extend</span><span class="op">:</span> <span class="op">{},</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="dt">plugins</span><span class="op">:</span> []<span class="op">,</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="op">}</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="configure-vite">7. Configure Vite</h2>
+<p>Add the following lines to <code>vite.config.js</code></p>
+<pre class="sourceCode js" id="cb8"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co">/*-- vite.config.js --*/</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="im">import</span> <span class="op">{</span> defineConfig <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;vite&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">const</span> <span class="op">{</span> resolve <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;path&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="im">export</span> <span class="im">default</span> <span class="at">defineConfig</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="dt">root</span><span class="op">:</span> <span class="st">&#39;_site&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">    <span class="dt">build</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">        <span class="dt">outDir</span><span class="op">:</span> <span class="st">&#39;../dist&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">        <span class="dt">rollupOptions</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">            <span class="dt">input</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">                <span class="dt">main</span><span class="op">:</span> <span class="at">resolve</span>(__dirname<span class="op">,</span> <span class="st">&#39;_site&#39;</span><span class="op">,</span> <span class="st">&#39;index.html&#39;</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">            <span class="op">},</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">        <span class="op">},</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">        <span class="dt">emptyOutDir</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="configure-eleventy">8. Configure Eleventy</h2>
+<p>Add the following lines to <code>.eleventy.js</code>.</p>
+<pre class="sourceCode js" id="cb9"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="kw">function</span> (config) <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">    <span class="va">config</span>.<span class="at">setLiquidOptions</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">        <span class="dt">dynamicPartials</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">    <span class="co">// Static assets to pass through</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">    <span class="va">config</span>.<span class="at">addPassthroughCopy</span>(<span class="st">&#39;./src/images&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">    <span class="va">config</span>.<span class="at">addPassthroughCopy</span>(<span class="st">&#39;./src/public&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">    <span class="va">config</span>.<span class="at">addPassthroughCopy</span>(<span class="st">&#39;./src/styles&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">    <span class="va">config</span>.<span class="at">addPassthroughCopy</span>(<span class="st">&#39;./src/main.js&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">        <span class="dt">dir</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">            <span class="dt">input</span><span class="op">:</span> <span class="st">&#39;src&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">            <span class="dt">output</span><span class="op">:</span> <span class="st">&#39;_site&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">        <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">        <span class="dt">passthroughFileCopy</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">        <span class="dt">templateFormats</span><span class="op">:</span> [<span class="st">&#39;html&#39;</span><span class="op">,</span> <span class="st">&#39;md&#39;</span><span class="op">,</span> <span class="st">&#39;liquid&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">        <span class="dt">htmlTemplateEngine</span><span class="op">:</span> <span class="st">&#39;liquid&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20">        <span class="dt">dataTemplateEngine</span><span class="op">:</span> <span class="st">&#39;liquid&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">        <span class="dt">markdownTemplateEngine</span><span class="op">:</span> <span class="st">&#39;liquid&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">    <span class="op">};</span></a>
+<a class="sourceLine" id="cb9-23" data-line-number="23"><span class="op">};</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="configure-npm-via-package.json">9. Configure npm via package.json</h2>
+<p>Even though most of your <code>package.json</code> file is already written for you, you will need to make a few adjustments to your scripts so you can start and run things most easily. Make your scripts section look like this:</p>
+<pre class="sourceCode json" id="cb10"><code class="sourceCode json"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="er">&quot;scripts&quot;:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">&quot;compile&quot;</span><span class="fu">:</span> <span class="st">&quot;npx @11ty/eleventy&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">&quot;dev&quot;</span><span class="fu">:</span> <span class="st">&quot;vite&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">&quot;build&quot;</span><span class="fu">:</span> <span class="st">&quot;vite build&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="dt">&quot;preview&quot;</span><span class="fu">:</span> <span class="st">&quot;vite preview&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">  <span class="dt">&quot;full&quot;</span><span class="fu">:</span> <span class="st">&quot;npm run build &amp;&amp; npm run preview&quot;</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="fu">}</span><span class="er">,</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="configure-alpinejs">10. Configure AlpineJS</h2>
+<p>Finally, you’ll need to wire up the javascript library inside <code>src/main.js</code>.</p>
+<pre class="sourceCode js" id="cb11"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co">/*-- src/main.js --*/</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="im">import</span> Alpine <span class="im">from</span> <span class="st">&#39;alpinejs&#39;</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="va">window</span>.<span class="at">Alpine</span> <span class="op">=</span> Alpine</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="va">Alpine</span>.<span class="at">start</span>()</a></code></pre>
+</div>
+<div class="step">
+<h2 id="add-a-liquid-template">11. Add a liquid template</h2>
+<p>Let’s set up a basic template that the other pages will be built on. Open up <code>src/_includes/base.html</code> and add the following content.</p>
+<pre class="sourceCode html" id="cb12"><code class="sourceCode html"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;icon&quot;</span><span class="ot"> type=</span><span class="st">&quot;image/svg+xml&quot;</span><span class="ot"> href=</span><span class="st">&quot;favicon.svg&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">        <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;/styles/style.css&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">        <span class="kw">&lt;title&gt;</span>{{ title }}<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">    <span class="kw">&lt;body</span><span class="ot"> class=</span><span class="st">&quot;h-screen w-screen flex justify-center items-center&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;md:w-1/4&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">          {{ content }}</a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">          <span class="kw">&lt;h1</span><span class="ot"> x-data=</span><span class="st">&quot;{ message: &#39;Hello from Alpine&#39; }&quot;</span><span class="ot"> x-text=</span><span class="st">&quot;message&quot;</span><span class="kw">&gt;&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;module&quot;</span><span class="ot"> src=</span><span class="st">&quot;/main.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb12-17" data-line-number="17"><span class="kw">&lt;/html&gt;</span></a></code></pre>
+<p>The double curly-braces you see here are liquid variables replaced by markdown content from other files. The element classes are some tailwind utilities so we can test to see if it’s working.</p>
+</div>
+<div class="step">
+<h2 id="populate-the-template">12. Populate the template</h2>
+<p>Now add some markdown that will populate the template. You can do this by writing into the <code>index.md</code> file at the root of the <code>src</code> directory.</p>
+<pre class="sourceCode html" id="cb13"><code class="sourceCode html"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">&lt;!-- src/index.md --&gt;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">---</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">layout: &quot;base.html&quot;</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">title: Hello from Markdown</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">---</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"># Just Markdown?</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">Checking to make sure if there is markdown here.</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10">## A second heading</a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12">And to see what paragraph spacing looks like in this model.</a>
+<a class="sourceLine" id="cb13-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;bg-emerald-500&quot;</span><span class="kw">&gt;</span>Also to see if tailwind works like this.<span class="kw">&lt;/p&gt;</span></a></code></pre>
+</div>
+<div class="step">
+<h2 id="import-the-tailwind-styles">13. Import the Tailwind styles</h2>
+<p>The last bit of sample content you need are the style imports. These go inside <code>src/styles/style.css.</code></p>
+<pre class="sourceCode css" id="cb14"><code class="sourceCode css"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="im">@tailwind</span> base;</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="im">@tailwind</span> components;</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="im">@tailwind</span> utilities;</a></code></pre>
+</div>
+<div class="step">
+<h2 id="last-steps">14. Last steps</h2>
+<p>The final steps are to compile the build and deploy. The first time you do this, you should run the commands one at a time to help debug errors, but in the future you can run the build and preview commands automatically in sequence by using <code>npm run full</code>.</p>
+<pre class="sourceCode bash" id="cb15"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1">$  <span class="ex">npm</span> run compile</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">$  <span class="ex">npm</span> run build</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">$  <span class="ex">npm</span> run preview</a></code></pre>
+<p>If you don’t get any errors, you should be able to visit <code>localhost:5000</code> in your browser and see your page. If there is a green background and you see a hello from Alpine, then everything is working.</p>
+</div>
+<div class="step">
+<h2 id="last-steps-1">15. Last steps</h2>
+<p>When you want to add more to your pages, you can stop the server by typing <code>ctl+c</code> (or <code>cmd+c</code> on Windows). Then, edit whatever you want and, when you’re done, rebuild the pages and re-launch the server.</p>
+<pre class="sourceCode bash" id="cb16"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="ex">npm</span> run compile</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="ex">npm</span> run full</a></code></pre>
+</div>
+<div class="step">
+<h2 id="thats-it">16. That’s it!</h2>
+<p>Now you have a working 11ty blog, with Tailwind CSS and Alpine JS. May it serve you well.</p>
+</div>
+</body>
+</html>

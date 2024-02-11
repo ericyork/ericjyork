@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>how-to-laravel</title>
+  <style>
+  body {width: 70ch;margin: 1em auto;background: #222;color:#ccc;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";line-height: 1.75;font-size:1.2rem;}
+  main {display: grid; grid-template-columns: 1fr 1fr;}
+  @media screen and (max-width: 768px){main {grid-template-columns: 1fr;}}
+  a:link{color:#6789ab;}
+  a:active{color:#eee;}
+  a:hover{color:#1cd8d8;}
+  a:visited{color:#789abc;}
+  a:visited:hover{color:#1cd8d8;}
+  .step {background: #2a2a2a;margin: 1em 0; padding: 1em;border: 1px solid #444;border-radius:4px;}
+  code {font-size: 1rem; color: #333; white-space: pre-wrap; background: #bcbcbc; padding: .2rem .5rem; border-radius: 5px;}
+  pre {font-size: 1rem; color: #333; white-space: pre-wrap; background: #bcbcbc; padding: .5rem .8rem; border-radius: 5px;}
+  h3 {color:#1cd8d8; border-bottom: 1px solid #1cd8d8; padding-bottom: 0.2rem; font-size: 1.8rem; margin-bottom: .5rem; line-height: 1.1;}
+  p {padding-top: 0;margin-top:0;}
+  img {width: 100%; height: auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="how-to-installuse-laravel-with-lamp-on-ubuntu-20.04">How to Install/Use Laravel with LAMP on Ubuntu 20.04</h1>
+<p>Laravel is a popular <a href="https://laravel.com/docs/8.x/installation#laravel-the-fullstack-framework">full-stack framework</a> so it makes an excellent choice to work with, and along the way we'll also install some other fairly essential bits of tooling. This guide shows you how to install laravel and all its dependencies on a LAMP stack running on Ubuntu 20.04.</p>
+<p><strong>Prerequisites</strong>: You need command line access and sudo privileges. You’ll also need to have recent versions of PHP and mySQL installed on your server.</p>
+<section id="step-one-connect-via-cli" class="step">
+<h3>Step One: Connect via CLI</h3>
+<p>If our ubuntu server is remote, we’ve gotta connect first:<br />
+<code>$  ssh -i /path/to/my/.ssh/key_file userName@127.0.0.1</code></p>
+</section>
+<section id="step-two-install-dependencies" class="step">
+<h3>Step Two: Install Dependencies</h3>
+<p>As we should always do, we must first update <code>apt</code> if necessary.<br />
+<code>$  sudo apt update</code><br />
+and if there are any upgrades to apply, go ahead and apply them by following the prompts that appear in your terminal output.</p>
+<p>We start with our first dependency, the venerable php-cli and unzip packages. Install like so:<br />
+<code>$  sudo apt install php-cli unzip</code></p>
+</section>
+<section id="step-three-install-composer" class="step">
+<h3>Step Three: Install Composer</h3>
+<p>Now you can go ahead and install Composer, which is a popular dependency manager for PHP. First, make sure you’re in your home directory, then run <code>curl</code> to download the installer package.</p>
+<pre>$  cd ~
+$  curl -sS https://getcomposer.org/installer -o composer-setup.php  </pre>
+<p>Let’s verify the installer files:
+  <pre>$  HASH=`curl -sS https://composer.github.io/installer.sig`</pre></p>
+<p>Then, run:<br />
+<pre>$  echo $HASH</pre><br />
+and you should get a very long number.</p>
+<p>Now, run the following php code in your terminal</p>
+<pre>$  php -r &quot;if (hash_file(&#39;SHA384&#39;, &#39;composer-setup.php&#39;) === &#39;$HASH&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&quot;</pre>
+<p>If it says “Installer corrupt” then download it again, but if you see:<br />
+<code>Installer verified.</code><br />
+Then you’re safe to install it.</p>
+<p>Install composer globally as a system-wide command so it can be run from anywhere.<br />
+<pre>$  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer</pre></p>
+<p>You can verify it’s installed by running<br />
+<code>$  composer</code></p>
+</section>
+<section id="step-four-install-nodejs" class="step">
+<h3>Step Four: Install NodeJS</h3>
+<p>Node and its package-manager (npm) and version manager (nvm) are also must haves for development tooling. Instead of installing at the default Ubuntu directories, we’re going to want to use a NodeSource PPA so we can get the latest version, plus npm. First, we visit <a href="https://github.com/nodesource/distributions">github.com/nodesource/distributions</a> and find the <code>curl</code> command for the latest version. Then, again making sure were are in our home directory, enter</p>
+<pre>$  cd ~
+$  curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs</pre>
+<p>Then, finish the installation by entering<br />
+<code>$  sudo apt-get install -y nodejs</code></p>
+</section>
+<section id="step-five-install-the-rest" class="step">
+<h3>Step Five: Install the Rest 😀</h3>
+<p>You may have noticed, before the previous step, your terminal trying to tell you to install some additional useful tools while we are at it. We’d be wise to listen, as the three compilers below will pretty much cover even the most extreme circumstances.<br />
+<code>$  sudo apt-get install gcc g++ make</code></p>
+<p>And we might as well install Yarn to round out our installers and dependency managers.</p>
+<pre>$  curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update &amp;&amp; sudo apt-get install yarn  </pre>
+</section>
+<section id="step-six-install-laravel" class="step">
+<h3>Step Six: Install Laravel</h3>
+<p>The Laravel framework requires a few final php extensions, first.<br />
+<code>$  sudo apt install php-bcmath php-mbstring php-xml</code></p>
+<p>Now, finally, we are ready to install laravel. Change into a new web directory:</p>
+<pre>$  cd ../../var/www/myDomainName/subDirectory
+$  composer create-project --prefer-dist laravel/laravel blog  </pre>
+</section>
+<section id="step-seven-configure-directories" class="step">
+<h3>Step Seven: Configure Directories</h3>
+<p>You will need to make sure the new project folders are owned by the right users and that the storage directory is writable.</p>
+<pre>$  sudo chown -R www-data blog
+$  sudo chgrp -R www-data blog
+$  sudo chmod 775 blog/storage  </pre>
+</section>
+<section id="step-eight-add-site-to-virtual-hosts" class="step">
+<h3>Step Eight: Add Site to Virtual Hosts</h3>
+<p>Our last step is to add our new Laravel site to our sites-available listing. Change into your root directory, then change into the file where you virtual hosts are listed.</p>
+<pre>$ cd ../../../../../../../../
+$ cd etc/apache2/sites-available
+$ touch laravel.conf
+$ sudo chown www-data laravel.conf
+$ sudo chgrp www-data laravel.conf
+$ sudo chmod 775 laravel.conf
+$ sudo nano laravel.conf   </pre>
+<p>Now, using your text editor, add the following to laravel.conf</p>
+<pre>&lt;VirtualHost *:80&gt;
+    ServerName nameOfYourServer
+    ServerAdmin admin@email.com
+    DocumentRoot /var/www/YOURDOMAINNAME/LARAVELDIR/public
+
+    &lt;Directory /var/www/YOURDOMAINNAME/LARAVELDIR&gt;
+    Options Indexes MultiViews
+    AllowOverride None
+    Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;  </pre>
+<p>Save and exit the file. You might want to restart apache just to be safe. <code>$ sudo apachectl -k graceful</code></p>
+</section>
+<div class="step">
+<h3 id="success">Success!</h3>
+<p>Now, you should be able to visit the document root in your browser and see the Laravel test page in place.</p>
+</body>
+</html>
